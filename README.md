@@ -2,7 +2,7 @@ This project was made for me to test my python skills.
 
 Do not criticize any mistake. Just modify Bugs.txt to show every bug that everybody has experienced.
 
-!IMPORTANT!
+IMPORTANT
 
 # Bugs
 
