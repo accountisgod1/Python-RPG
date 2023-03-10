@@ -17,6 +17,6 @@ Versions With Security Update
 
 To report a vulnerability, check Bugs.txt
 
-# Security Issues
+## Security Issues
 
-There are many security issues with this script as it is vulnerable to attacks. Expect one of the files changed.
+There are many security issues with this script as it is vulnerable to attacks. Expect one of the files to be corrupted.
