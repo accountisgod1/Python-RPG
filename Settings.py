@@ -1,0 +1,1 @@
+Punch_Stamina = 21
