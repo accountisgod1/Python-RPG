@@ -1,17 +1,17 @@
 # Security Policy
 
+If you see one of the files altered. DO NOT DOWNLOAD THIS REPOSITORY.
+
+
+
+
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+Versions With Security Update
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 5.2.x   | :x:                |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| 0.0.1   | :x:                |
 
 ## Reporting a Vulnerability
 
