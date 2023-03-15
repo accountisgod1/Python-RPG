@@ -19,6 +19,9 @@ SwordEquipped = False
 SpearEquipped = False
 ShieldEquipped = False
 
+class RPG:
+   pass
+
 def check_stamina():
     while P.Stamina < P.MaxStamina:
         P.Stamina += 1
@@ -57,7 +60,7 @@ if TutorialInput.lower() == "a":
     if AttackInput.lower() == "punch":
         P.Stamina - S.Punch_Stamina
         print(f"Stamina: {P.Stamina}")
-        En.EnemiesStats["Goblin"]["Health"] -=10
+        En.EnemiesStats["Goblin"]["Health"] -= 10
         print("Health:",En.EnemiesStats["Goblin"]["Health"])
         check_stamina()
         if En.EnemiesStats["Goblin"]["Health"] == 0:
@@ -189,17 +192,21 @@ if SelectionInput.lower() == "a":
        En.EnemiesStats["Skeleton Warrior"]["Health"] -= 10
        En.EnemiesStats["Skeleton Warrior"]["Health"] += 0.5
        print("Health:",En.EnemiesStats["Skeleton Warrior"]["Health"])
-       En.EnemiesStats["Skeleton Warrior"]["Health"] -= 10
-       print("Health:",En.EnemiesStats["Skeleton Warrior"]["Health"])
-       if En.EnemiesStats["Skeleton Warrior"]["Health"] <= 0:
-          print("YOU WON!!")
-          xp = 100
-          print(xp)
-          P.Coins += 100
-          print("Coins:",P.Coins)
-          print("A random traveller asked you to take a dangerous journey. You accepted")
-          En.EnemiesStats["Skeleton Warrior"]["Health"] = 20
-          check_stamina()
+       while True:
+        if En.EnemiesStats["Skeleton Warrior"]["Health"] > 0:
+         En.EnemiesStats["Skeleton Warrior"]["Health"] -= 10
+         if En.EnemiesStats["Skeleton Warrior"]["Health"] <= 0:
+            print("YOU WON!!")
+            print("Health:",En.EnemiesStats["Skeleton Warrior"]["Health"])
+            xp = 100
+            print(xp)
+            P.Coins += 100
+            print("Coins:",P.Coins)
+            print("A random traveller asked you to take a dangerous journey. You accepted")
+            En.EnemiesStats["Skeleton Warrior"]["Health"] = 20
+            check_stamina()
+            XP()
+            break
 
    elif AttackInput.lower() == "sword":
       if SwordEquipped == True:
@@ -220,6 +227,7 @@ if SelectionInput.lower() == "a":
                 print("A random traveller asked you to take a dangerous journey. You accepted")
                 En.EnemiesStats["Skeleton Warrior"]["Health"] = 20
                 check_stamina()
+                XP()
 
           elif InStock1 == True:
              P.Stamina -= StaminaUsage1
@@ -238,6 +246,7 @@ if SelectionInput.lower() == "a":
                 print("A random traveller asked you to take a dangerous journey. You accepted")
                 En.EnemiesStats["Skeleton Warrior"]["Health"] = 20
                 check_stamina()
+                XP()
 
 
 elif SelectionInput.lower() == "v":
@@ -330,12 +339,12 @@ elif SelectionInput.lower() == "v":
 
 
 #Dungeon
+def Dungeon():
+ print("You arrived, you found out the place is actually a dungeon.")
 
-print("You arrived, you found out the place is actually a dungeon.")
+ SelectionInput = input("V To Go To The Village, A To Attack ")
 
-SelectionInput = input("V To Go To The Village, A To Attack ")
-
-if SelectionInput.lower() == "a":
+ if SelectionInput.lower() == "a":
    print("You Are Going To Fight A Skeleton")
    print("Health: ",En.EnemiesStats["Skeleton"]["Health"])
    print("Damage: ",En.EnemiesStats["Skeleton"]["Damage"])
@@ -356,6 +365,7 @@ if SelectionInput.lower() == "a":
           print("Coins:",P.Coins)
           En.EnemiesStats["Skeleton"]["Health"] = 20
           check_stamina()
+          XP()
 
    elif AttackInput.lower() == "sword":
       if SwordEquipped == True:
@@ -375,6 +385,7 @@ if SelectionInput.lower() == "a":
                 print("Coins:",P.Coins)
                 En.EnemiesStats["Skeleton"]["Health"] = 20
                 check_stamina()
+                XP()
 
           elif InStock1 == True:
              P.Stamina -= StaminaUsage1
@@ -386,8 +397,8 @@ if SelectionInput.lower() == "a":
              print("Health:",En.EnemiesStats["Skeleton"]["Health"])
              if En.EnemiesStats["Skeleton"]["Health"] <= 0:
                 print("You Are Fighting 2 Goblins.")
-                print("Health: ",En.EnemiesStats["Goblin"]["Health"]+10)
-                print("Damage: ",En.EnemiesStats["Goblin"]["Damage"]+10)
+                print("Health: 20")#En.EnemiesStats["Goblin"]["Health"]
+                print("Damage: 20")#En.EnemiesStats["Goblin"]["Damage"]
                 AttackInput = input("What Do You Want To Attack With: ")
                 if AttackInput == "Punch":
                     P.Stamina - S.Punch_Stamina
@@ -404,6 +415,7 @@ if SelectionInput.lower() == "a":
                         print("Coins:",P.Coins)
                         En.EnemiesStats["Goblin"]["Health"] = 10
                         check_stamina()
+                        XP()
 
                 elif AttackInput.lower() == "sword":
                     if SwordEquipped == True:
@@ -421,27 +433,29 @@ if SelectionInput.lower() == "a":
                              print(xp)
                              P.Coins += 100
                              print("Coins:",P.Coins)
-                             En.EnemiesStats["Skeleton Warrior"]["Health"] = 20
+                             En.EnemiesStats["Goblin"]["Health"] = 10
                              check_stamina()
+                             XP()
 
                        elif InStock1 == True:
                             P.Stamina -= StaminaUsage1
                             print(f"Stamina: {P.Stamina}")
-                            En.EnemiesStats["Skeleton"]["Health"] -= DamageAmount1
-                            En.EnemiesStats["Skeleton"]["Health"] += 0.5
-                            print("Health:",En.EnemiesStats["Skeleton Warrior"]["Health"])
-                            En.EnemiesStats["Skeleton"]["Health"] -= DamageAmount
-                            print("Health:",En.EnemiesStats["Skeleton Warrior"]["Health"])
+                            En.EnemiesStats["Goblin"]["Health"] -= DamageAmount1
+                            En.EnemiesStats["Goblin"]["Health"] += 0.5
+                            print("Health:",En.EnemiesStats["Goblin"]["Health"])
+                            En.EnemiesStats["Goblin"]["Health"] -= DamageAmount
+                            print("Health:",En.EnemiesStats["Goblin"]["Health"])
                             print("YOU WON!!")
                             xp = 100
                             print(xp)
                             P.Coins += 100
                             print("Coins:",P.Coins)
-                            En.EnemiesStats["Skeleton Warrior"]["Health"] = 20
+                            En.EnemiesStats["Goblin"]["Health"] = 10
                             check_stamina()
+                            XP()
 
 
-elif SelectionInput.lower() == "v":
+ elif SelectionInput.lower() == "v":
     print("Loading Village")
     VillageInput = input("W To Go The Weapon Shop, T For Training ")
 
@@ -510,3 +524,5 @@ elif SelectionInput.lower() == "v":
 
                  elif P.Coins < Price:
                     print("You Don't Have Enough Coins")
+
+Dungeon()
