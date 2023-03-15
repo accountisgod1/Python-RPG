@@ -11,6 +11,7 @@ Versions With Security Update
 
 | Version | Supported          |
 | ------- | ------------------ |
+| 0.03    | :x:                |
 | 0.0.2   | :x:                |
 | 0.0.1   | :x:                |
 
