@@ -60,7 +60,7 @@ if TutorialInput.lower() == "a":
     if AttackInput.lower() == "punch":
         P.Stamina - S.Punch_Stamina
         print(f"Stamina: {P.Stamina}")
-        En.EnemiesStats["Goblin"]["Health"] -= 10
+        En.EnemiesStats["Goblin"]["Health"] -= S.Punch_Damage
         print("Health:",En.EnemiesStats["Goblin"]["Health"])
         check_stamina()
         if En.EnemiesStats["Goblin"]["Health"] == 0:
@@ -189,12 +189,12 @@ if SelectionInput.lower() == "a":
    if AttackInput == "Punch":
        P.Stamina - S.Punch_Stamina
        print(f"Stamina: {P.Stamina}")
-       En.EnemiesStats["Skeleton Warrior"]["Health"] -= 10
+       En.EnemiesStats["Skeleton Warrior"]["Health"] -= S.Punch_Damage
        En.EnemiesStats["Skeleton Warrior"]["Health"] += 0.5
        print("Health:",En.EnemiesStats["Skeleton Warrior"]["Health"])
        while True:
         if En.EnemiesStats["Skeleton Warrior"]["Health"] > 0:
-         En.EnemiesStats["Skeleton Warrior"]["Health"] -= 10
+         En.EnemiesStats["Skeleton Warrior"]["Health"] -= S.Punch_Damage
          if En.EnemiesStats["Skeleton Warrior"]["Health"] <= 0:
             print("YOU WON!!")
             print("Health:",En.EnemiesStats["Skeleton Warrior"]["Health"])
@@ -352,10 +352,10 @@ def Dungeon():
    if AttackInput == "Punch":
        P.Stamina - S.Punch_Stamina
        print(f"Stamina: {P.Stamina}")
-       En.EnemiesStats["Skeleton"]["Health"] -= 10
+       En.EnemiesStats["Skeleton"]["Health"] -= S.Punch_Damage
        En.EnemiesStats["Skeleton"]["Health"] += 0.5
        print("Health:",En.EnemiesStats["Skeleton"]["Health"])
-       En.EnemiesStats["Skeleton"]["Health"] -= 10
+       En.EnemiesStats["Skeleton"]["Health"] -= S.Punch_Damage
        print("Health:",En.EnemiesStats["Skeleton"]["Health"])
        if En.EnemiesStats["Skeleton"]["Health"] <= 0:
           print("YOU WON!!")
@@ -403,9 +403,9 @@ def Dungeon():
                 if AttackInput == "Punch":
                     P.Stamina - S.Punch_Stamina
                     print(f"Stamina: {P.Stamina}")
-                    En.EnemiesStats["Goblin"]["Health"] -= 10
+                    En.EnemiesStats["Goblin"]["Health"] -= S.Punch_Damage
                     print("Health:",En.EnemiesStats["Goblin"]["Health"])
-                    En.EnemiesStats["Goblin"]["Health"] -= 10
+                    En.EnemiesStats["Goblin"]["Health"] -= S.Punch_Damage
                     print("Health:",En.EnemiesStats["Goblin"]["Health"])
                     if En.EnemiesStats["Goblin"]["Health"] <= 0:
                         print("YOU WON!!")
