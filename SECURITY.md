@@ -11,13 +11,13 @@ Versions With Security Update
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 0.0.3    | :x:                |
+| 0.0.3   | :x:                |
 | 0.0.2   | :x:                |
 | 0.0.1   | :x:                |
 
 ## Reporting a Vulnerability
 
-To report a vulnerability, check Bugs.txt
+To report a vulnerability, check [Issues](https://github.com/accountisgod1/Python-RPG/issues)
 
 ## Security Issues
 
