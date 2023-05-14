@@ -19,3 +19,8 @@ Check this page to see the security policy, click this link: [Security for this 
 # How to use
 
 Extract every file from there into a folder, do not split the files (ex: You moved Enemies.py to another folder).
+
+## Errors
+ 
+ # No Such Attribute
+   The no such attribute error happens because the command is being built. If you have a specific key to access each new command or use    the command named 'EnterKey' then you can access other commands that is being built.
